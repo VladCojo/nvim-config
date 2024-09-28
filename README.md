@@ -1,2 +1,3 @@
 # nvim-config
-This is the
+Dumb proof nvim IDE, efficient and minimalist approach.
+
