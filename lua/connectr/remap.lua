@@ -1,1 +1,1 @@
-print("remap.lua working")
+vim.g.mapleader = " "
