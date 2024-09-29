@@ -1,0 +1,7 @@
+************* Module test
+test.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 3.33/10 (previous run: 3.33/10, +0.00)
+

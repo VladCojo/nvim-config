@@ -41,7 +41,6 @@ vim.keymap.set("n", "Q", "<nop>")
 -- Open new tmux window --
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
--- TODO: Verify after conficguring LSP
 -- Format code using LSP --
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -50,8 +49,8 @@ vim.keymap.set("n", "<C-c>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-x>", "<cmd>cprev<CR>zz")
 
 -- Navigate location list --
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>lprev<CR>zz")
 
 -- Search and replace --
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
