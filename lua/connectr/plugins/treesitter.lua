@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     version = false, -- last release is way too old and doesn't work on Windows
     build = ":TSUpdate",
-    event = { "BufRead","BufNewFile", "VeryLazy" },
+    event = { "BufRead", "BufNewFile", "VeryLazy" },
     lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
     init = function(plugin)
         -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
@@ -17,7 +17,7 @@ return {
     -- Keys dont work --
     keys = {
         { "<c-space>", desc = "Increment Selection" },
-        { "<bs>", desc = "Decrement Selection", mode = "x" },
+        { "<bs>",      desc = "Decrement Selection", mode = "x" },
     },
     opts_extend = { "ensure_installed" },
     ---@type TSConfig
@@ -71,23 +71,23 @@ return {
         },
     },
     ---@param opts TSConfig
---    config = function(_, opts)
---        if type(opts.ensure_installed) == "table" then
---            opts.ensure_installed = LazyVim.dedup(opts.ensure_installed)
---        end
---        require("nvim-treesitter.configs").setup(opts)
---    end,
+    --    config = function(_, opts)
+    --        if type(opts.ensure_installed) == "table" then
+    --            opts.ensure_installed = LazyVim.dedup(opts.ensure_installed)
+    --        end
+    --        require("nvim-treesitter.configs").setup(opts)
+    --    end,
     config = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-        local seen = {}
-        opts.ensure_installed = vim.tbl_filter(function(lang)
-            if not seen[lang] then
-                seen[lang] = true
-                return true
-            end
-        end, opts.ensure_installed)
-    end
-    require("nvim-treesitter.configs").setup(opts)
-end,
+        if type(opts.ensure_installed) == "table" then
+            local seen = {}
+            opts.ensure_installed = vim.tbl_filter(function(lang)
+                if not seen[lang] then
+                    seen[lang] = true
+                    return true
+                end
+            end, opts.ensure_installed)
+        end
+        require("nvim-treesitter.configs").setup(opts)
+    end,
 
 }

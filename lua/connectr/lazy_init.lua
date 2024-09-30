@@ -12,6 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "connectr.plugins",
+--    spec = "connectr.plugins",
+    spec = {
+        {import = "connectr.plugins"},
+        {import = "connectr.themes"},
+    },
     change_detection = { notify = false }
 })
